@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakSpark</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SpeakSpark</h1>
+    </header>
+    <main>
+        <!-- Post input form -->
+        <form id="postForm">
+            <textarea id="postContent" placeholder="Speak your mind..."></textarea>
+            <button type="button" onclick="postToSpeakSpark()">Post</button>
+        </form>
+
+        <!-- Display posts -->
+        <div id="postContainer">
+            <!-- Posts will be displayed here dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // JavaScript logic for handling posts
+        function postToSpeakSpark() {
+            // Get post content from the textarea
+            var postContent = document.getElementById('postContent').value;
+
+            // Validate post content (add your validation logic here)
+
+            // Create a new post element
+            var postElement = document.createElement('div');
+            postElement.className = 'post';
+            postElement.textContent = postContent;
+
+            // Append the post to the post container
+            document.getElementById('postContainer').appendChild(postElement);
+
+            // Clear the post input
+            document.getElementById('postContent').value = '';
+        }
+    </script>
+</body>
+</html>
